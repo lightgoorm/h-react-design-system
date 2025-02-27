@@ -1,5 +1,5 @@
 {
-  "name": "@hdesginsystem/thems",
+  "name": "@hdesginsystem/themes",
   "version": "0.0.1",
   "type": "module",
   "main" : "dist/index/js",
@@ -12,10 +12,11 @@
     "./themes.css" : "./dist/themes.css"
   },
   "scripts": {
-    "build": "npm run build:js && npm run build:type && npm run build:css",
+    "build": "yarn build:js && yarn build:type && yarn build:css",
     "build:js": "node build.js",
-    "build:type" : "tsc --emitDeclarationOnly",
-    "build:css" : "node ./scripts/build-css-modules.js"
+    "build:type" : "yarn tsc --emitDeclarationOnly",
+    "build:css" : "node ./scripts/build-css-modules.js",
+    "clean" : "rm -rf dist"
   },
   "devDependencies": {
     "esbuild": "^0.16.17",
