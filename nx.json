@@ -1,0 +1,43 @@
+{
+  "workspaceLayout": {
+    "appsDir": "services",
+    "libsDir": "packages"
+  },
+  "namedInputs": {
+    "default": ["{projectRoot}/**/*"],
+    "production": ["!{projectRoot}/**/*.spec.tsx"]
+  },
+  "targetDefaults": {
+    "build": {
+      "dependsOn": ["^build"],
+      "cache": true
+    }
+  },
+  "parallel": 4,
+  "defaultBase": "main",
+  "plugins": [],
+  "release": {
+    "version": {
+      "generatorOptions": {
+        "currentVersionResolver": "git-tag",
+        "specifierSource": "conventional-commits"
+      }
+    },
+    "changelog": {
+      "git": {
+        "commit": true,
+        "tag": true
+      },
+      "workspaceChangelog": {
+        "createRelease": "github"
+      },
+      "projectChangelogs": true
+    }
+  },
+  "generators": {
+    "@nrwl/js:library": {
+      "buildable": true
+    }
+  },
+  "extends": "nx/presets/npm.json"
+}

@@ -2,15 +2,21 @@
   "name": "h-react-design-system",
   "version": "0.0.0",
   "description": "ham`s react design system",
-  "private" : true,
+  "private": true,
   "workspaces": [
     "packages/**/*",
     "services/**/*"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "nx build",
+    "graph" : "nx run-many --target=build --graph"
   },
   "installConfig": {
     "pnp": true
+  },
+  "packageManager": "yarn@4.7.0",
+  "devDependencies": {
+    "nx": "^20.4.6"
   }
 }
