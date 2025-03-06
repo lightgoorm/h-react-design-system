@@ -19,6 +19,7 @@
     "clean": "rm -rf dist"
   },
   "devDependencies": {
+    "@hdesignsystem/esbuild-config": "workspace:^",
     "esbuild": "^0.16.17",
     "typescript": "^5.7.3"
   }
