@@ -10,13 +10,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "nx build",
-    "graph": "nx run-many --target=build --graph"
-  },
-  "installConfig": {
-    "pnp": true
+    "graph": "nx run-many --target=build --graph",
+    "dev:all": "yarn dev:storybook & yarn dev:packages",
+    "dev:storybook": "nx storybook @hdesignsystem/storybook",
+    "dev:packages": "nx run-many --target=dev --projects='@hdesignsystem/react-components-*"
   },
   "packageManager": "yarn@4.7.0",
   "devDependencies": {
+    "@hdesignsystem/react-components-layout": "workspace:^",
+    "@hdesignsystem/themes": "workspace:^",
+    "@storybook/addon-docs": "^8.6.4",
+    "@storybook/react": "^8.6.4",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "eslint": "^8.48.0",
@@ -30,6 +34,8 @@
     "eslint-plugin-storybook": "^0.6.13",
     "nx": "^20.4.6",
     "prettier": "^3.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "typescript": "^5.2.2"
   }
 }
